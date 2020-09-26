@@ -1,0 +1,25 @@
+*For each component,explain what kind of technique used and why use that?
+*That is, which feature of that technique you think meet your requirments or why not others.
+
+plan/lifecycle: waterfall
+
+requirment: from the view of users. 
+            from the view of programmer.(button, translation model, NN model)
+	    maybe Consistency, Completeness, and Correctness
+
+design: 1.system python, javascripts(due to api), MVC,CSS, how the components in requierement connected
+	remember:traceability: which design meets which requirment
+	2.architecture, UML,how many parts, how each part connectes, how UI looks like 
+
+Process and Management : Github, what, why(features).
+
+code: class, exception, thread
+
+test: static checking, unit test- how many units in the design. test cases
+        how test cases meet requirement and traceability.
+        code coverage
+	test cases can be splits into several components instead of just one waterfall.	
+
+Maintenance : traceability.
+
+

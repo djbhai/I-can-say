@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>
+
+
+
+
+</title>
+<style>
+#button1{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+}
+</style>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+</head>
+
+
+
+<body >
+
+<form action="/words" method="post">
+<div id="button1">
+
+<input class="btn btn-primary"  type="submit" value="Words" >   <br> <br>
+
+
+<div class="form-check form-check-inline" >
+<input  type="radio" name="difficulty" value="random" id="random" checked="checked"> 
+<label for="random" >Random</label>
+</div>
+<div class="form-check form-check-inline">
+<input  type="radio" name="difficulty" value="easy" id="easy"> 
+<label for="easy">Easy</label>
+</div>
+<div class="form-check form-check-inline">
+
+<input  type="radio" name="difficulty" value="medium" id="medium"> 
+<label for="medium" >Medium</label>
+</div>
+<div class="form-check form-check-inline">
+<input type="radio" name="difficulty" value="difficult" id="difficult"> 
+
+<label for="difficult">Difficult</label>
+</div>
+<br> <br>
+</form>
+<form action="/phrases" method="post">
+<input class="btn btn-primary" type="submit" value="Phrases">  <br><br>
+
+<div class="form-check form-check-inline">
+<input  type="radio" name="difficulty" value="random" id="random" checked="checked"> 
+<label for="random" >Random</label>
+</div>
+<div class="form-check form-check-inline">
+<input  type="radio" name="difficulty" value="easy" id="easy"> 
+<label for="easy">Easy</label>
+</div>
+<div class="form-check form-check-inline">
+
+<input  type="radio" name="difficulty" value="medium" id="medium"> 
+<label for="medium" >Medium</label>
+</div>
+<div class="form-check form-check-inline">
+<input type="radio" name="difficulty" value="difficult" id="difficult"> 
+
+<label for="difficult">Difficult</label>
+</div>
+
+
+</div>
+</form>
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,81 @@
+1.
+Share two youtube videos that provide tutorials on speech2text and text2speech. 
+The codes are available to download and run correctly.
+The text2speech program contains methods to change pitch, through which we can create a female or male voice, speed and voice. 
+Text2Speech JS
+https://www.youtube.com/watch?v=PEbLgAKK5uo&t=100s
+Speech2Text JS
+https://www.youtube.com/watch?v=ABoCeLjY0Xo&t=874s
+
+They are implemented using JS, using environment provided by Google Chrome.
+I am searching for the possibility of incorporating python into HTML if we want to use machine learning.
+If that fails, we just give up the machine learning parts.
+
+2.
+Flask (A Python Microframework) (flask.pocoo.org/) makes it possible.
+
+The structure is like this:
+
+1 select_sentences.html
+  a bunch of sentences to choose from /* Since it's for kids maybe it's better to give a sentence rather than selecting*/
+  a comfirm button, that confirms a sentence. Then go to 2 play_and_record.html
+  a record button for each sentence. It records voice to be used as ML model training input data.
+  
+  
+2 play_and_record.html
+  show sentences above
+  2 pitch buttons in the left
+  3 speed buttons in the left
+  a play button
+  a record button
+  a stop recording and testnresult button
+  a return to main menu button in the upper right.
+  a monkey can be placed at the right screen.
+....
+...then the record is analyzed either using ML or the Speech2Text JS mentioned in the above tutorial.
+...the result goes to 3 show result.html
+.....
+3 show_result.html
+  show some correct percentage.
+  a button to go back to 2 play_and_record.html to do the remaining words. 
+  The monkey at the right screen climb at certain height.
+
+
+
+python control function:
+
+from flask import Flask, render_template,request
+
+app = Flask(__name__)
+sentence_to_test=''
+
+#main menu
+@app.route('/', methods=['GET'])
+def selection_table():
+ return render_template('selection.html')
+
+#once the selection_button is pressed:
+@app.route('/', methods=['POST'])
+def selection_result():
+ sentence_to_test=request.selection['selection_table']
+ return render_template('play_and_record.html',sentence=sentence_to_test)
+
+#once the stop_test button is pressed:
+@app.route('/playrecord', methods=['POST'])
+def stoprecord():
+ voice = request.form['raw_voice']
+ sentence_google=request.form['google_translation']
+ sentence_from_ml=ml_model(voice)
+ score_,sentence_to_test=result_cal(sentence,sentence_google,sentence_from_ml)
+ return render_template('show_result.html', score=score_)
+
+#once the test_remaining button is pressed:
+@app.route('/testremain', methods=['POST'])
+def testremain():
+ return render_template('play_and_record.html',sentence=sentence_to_test)
+
+if __name__ == '__main__':
+ app.run()
+
+
+

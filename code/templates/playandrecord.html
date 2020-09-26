@@ -1,0 +1,18 @@
+<html>
+<head>
+ <title>Please Sign In</title>
+</head>
+<body>
+ {% if play_sentence %}
+ <p style="color:red">{{ play_sentence }}</p>
+ {% endif %}
+ <form action={{addr}} method="post">
+ <p><button type="submit">test</button></p>
+ </form>
+
+ <form action="/" method="get">
+ <p><button type="goback">back</button></p>
+ </form>
+
+</body>
+</html>
